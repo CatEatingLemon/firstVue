@@ -14,7 +14,7 @@ const routes = [{
   },
   {
     path: '/Index',
-    name: 'Index1',
+    name: 'Index',
     component: Index
   }
 ]
