@@ -7,7 +7,7 @@
     >
       <van-list>
         <van-cell v-for="item in nav" :key="item.fileName" :title="item.name">
-          <router-link :to="item.fileName">{{item.name}}</router-link>
+          <router-link :to="item.fileName">{{ item.name }}</router-link>
         </van-cell>
       </van-list>
     </van-popup>
@@ -37,6 +37,10 @@ export default {
             { name: "网课数据", fileName: "OnlineClass" },
             { name: "单词游戏", fileName: "WordGame" },
             { name: "考试词汇", fileName: "TestVocabulary" },
+            { name: "小优词库", fileName: "Thesaurus" },
+            { name: "智能翻译", fileName: "Translate" },
+            { name: "趣味识图", fileName: "RecThePicture" },
+            { name: "搜题记录", fileName: "QAHistroy" },
           ],
         },
         {
