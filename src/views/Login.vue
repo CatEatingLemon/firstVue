@@ -29,31 +29,42 @@
 import { Button } from "vant";
 import { Form } from "vant";
 import { Field } from "vant";
+import { Toast } from "vant";
 export default {
   components: {
     [Button.name]: Button,
     [Form.name]: Form,
     [Field.name]: Field,
+    [Toast.name]: Toast,
   },
   data() {
     return {
       username: "",
       password: "",
+      localAccount: {
+        account: "Qy@calvin888",
+        password: "calvin",
+      },
     };
   },
   methods: {
-      onSubmit(){
-          let that=this;
-          if(that.username.length>0 && that.password.length>0){
-              that.$router.push({name:"Index"})
-          }
+    onSubmit() {
+      let that = this;
+      if (
+        that.username == that.localAccount.account &&
+        that.password == that.localAccount.password
+      ) {
+        that.$router.push({ name: "Index" });
+      } else {
+        Toast.fail("账号密码错误");
       }
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-    .login-main{
-        margin-top:30vh;
-    }
+.login-main {
+  margin-top: 30vh;
+}
 </style>
