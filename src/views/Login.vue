@@ -26,16 +26,14 @@
 </template>
 
 <script>
-import { Button } from "vant";
-import { Form } from "vant";
-import { Field } from "vant";
-import { Toast } from "vant";
+import { Button, Form, Field, Toast } from "vant";
 export default {
+  name: "Login",
   components: {
     [Button.name]: Button,
     [Form.name]: Form,
     [Field.name]: Field,
-    [Toast.name]: Toast,
+    [Toast.name]: Toast
   },
   data() {
     return {
@@ -54,7 +52,10 @@ export default {
         that.username == that.localAccount.account &&
         that.password == that.localAccount.password
       ) {
-        that.$router.push({ name: "Index" });
+        that.$router.push({
+          name: "Index",
+          query: { navName: "LoginStatis" },
+        });
       } else {
         Toast.fail("账号密码错误");
       }

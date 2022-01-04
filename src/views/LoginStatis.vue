@@ -1,29 +1,25 @@
 <template>
   <div>
     <Header :navObj="navObj" />
+    <DataList />
   </div>
 </template>
 
 <script>
 import Header from "../components/Header";
-
+import DataList from "../components/DataList";
 export default {
-  name: "Index",
+  name: "LoginStatis",
   components: {
     [Header.name]: Header,
+    [DataList.name]: DataList,
   },
   data() {
     return {
       navObj: {
-        name: "",
+        name: this.$route.query.navName,
       },
     };
-  },
-  methods: {},
-  created: function () {
-    //默认显示第一个路由
-    let navName = this.$route.query.navName;
-    this.navObj.name = navName;
   },
 };
 </script>
