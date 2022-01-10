@@ -7,12 +7,11 @@
 </template>
 
 <script>
-// import bus from "../bus";
 import Header from "../components/Header.vue";
 import DataList from "../components/DataList.vue";
 import Query from "../components/Query.vue";
 export default {
-  name: "Read",
+  name: "LoginStatis",
   components: {
     [Header.name]: Header,
     [DataList.name]: DataList,
@@ -22,22 +21,9 @@ export default {
     return {
       navObj: {
         name: this.$route.query.navName,
-        urlName: "",
-      },
-    }
-  },
-  created() {
-    let nav = this.$parent.nav;
-    let url = "";
-    for (let item of nav) {
-      let temp = item.children.find((_item) => {
-        return _item.fileName === this.navObj.name;
-      });
-      if (temp) {
-        url = temp.urlName;
+        urlName: "GetAdminLoginRec",
       }
-    }
-    this.navObj.urlName = url;
+    };
   },
 };
 </script>

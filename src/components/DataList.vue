@@ -28,23 +28,28 @@
       :items-per-page="form.pageSize"
       @change="PageChange"
     />
+    <van-overlay :show="isLoading" @click="isLoading = false">
+      <van-loading />
+    </van-overlay>
   </div>
 </template>
 
 <script>
-import { Pagination, Toast } from "vant";
-import bus from '../bus'
+import { Pagination, Toast, Loading, Overlay } from "vant";
+import bus from "../bus";
 export default {
   name: "DataList",
   components: {
     [Pagination.name]: Pagination,
     [Toast.name]: Toast,
+    [Loading.name]: Loading,
+    [Overlay.name]: Overlay,
   },
-  // props: {
-  //   reqObj: {
-  //     type: Object,
-  //   },
-  // },
+  props: {
+    navObj: {
+      type: Object,
+    },
+  },
   data() {
     return {
       form: {
@@ -68,28 +73,22 @@ export default {
         { id: 9, name: "22" },
         { id: 10, name: "22" },
       ],
-      totalItems: 11,
-      url: " http://192.168.0.199:8009/Thirdparty",
-      fullUrl: "",
+      totalItems: 1,
+      url: "http://192.168.0.199:8009/Thirdparty",
+      isLoading: false,
     };
-  },
-  watch: {
-    // reqObj: {
-    //   handler(obj) {
-    //     let that = this;
-    //     this.fullUrl = this.url + obj.urlName;
-    //     this.param = Object.assign(that.form, obj.param);
-    //     that.query();
-    //   },
-    //   deep: true, //引用类型必须深度监听
-    // },
   },
   methods: {
     query() {
       let that = this;
+      this.isLoading=true;
       this.$axios
-        .post(that.fullUrl, that.$qs.stringify(that.param))
+        .post(
+          that.url + "/" + that.$props.navObj.urlName,
+          that.$qs.stringify(that.param)
+        )
         .then((res) => {
+          this.isLoading=false;
           if (res.data.isSuccess) {
             that.titles = res.data.data.titles;
             that.list = res.data.data.list;
@@ -99,32 +98,28 @@ export default {
           }
         })
         .catch(() => {
+          this.isLoading=false;
           Toast("连接失败");
         });
     },
-    PageChange(e){
-      this.pageIndex=e;
+    PageChange(e) {
+      this.pageIndex = e;
       this.query();
-    }
+    },
   },
-  mounted: function () {
-    // let that = this;
-    // console.log(that.$props);
-    // this.fullUrl = this.url + this.$props.reqObj.urlName;
-    // this.param = Object.assign(that.form, this.$props.reqObj.param);
-    // this.query();
-     bus.$on("queryObj",(data)=>{
-      console.log(data);
-    })
+  created: function () {
+    let that = this;
+    bus.$on(that.$props.navObj.name + "Event", (data) => {
+      if (data) {
+        that.param = Object.assign(that.form, data);
+        that.query();
+      }
+    });
   },
-  created:function(){
-    // bus.$on("queryObj",function(data){
-    //   console.log(data);
-    // })
+  beforeDestroy: function () {
+    let that = this;
+    bus.$off(that.$props.navObj.name + "Event");
   },
-  beforeDestroy:function(){
-    bus.$off("queryObj")
-  }
 };
 </script>
 
@@ -140,6 +135,11 @@ table {
   td {
     white-space: nowrap;
     padding: 2vw;
+  }
+}
+.van-overlay {
+  .van-loading {
+    top: 50vh;
   }
 }
 </style>

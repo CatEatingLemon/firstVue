@@ -15,15 +15,15 @@ export default {
   data() {
     return {
       navObj: {
-        name: "",
+        name: "index",
       },
     };
   },
   methods: {},
   created: function () {
     //默认显示第一个路由
-    let navName = this.$route.query.navName;
-    this.navObj.name = navName;
+    // let navName = this.$route.query.navName;
+    // this.navObj.name = navName;
   },
 };
 </script>

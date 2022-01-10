@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-nav-bar :title="title" left-arrow @click-right="menuSwitch">
+    <van-nav-bar :title="title" @click-right="menuSwitch">
       <template #right>
         <van-icon name="minus" size="18" />
       </template>
@@ -52,24 +52,24 @@ export default {
   methods: {
     menuSwitch() {
       //控制导航栏显示
-      //this.$emit("changePop", !this.menuOpen);
       this.menuOpen = !this.menuOpen;
     },
     changeNav(e) {
       this.activeIndex = e;
     },
     changeItem(e) {
-      console.log(e.fileName);
-      this.$router.push({
-        name: e.fileName,
-        query: { navName: e.fileName },
-      });
+      if (this.$router.history.current.name != e.fileName) {
+        this.$router.push({
+          name: e.fileName,
+          query: { navName: e.fileName },
+        });
+      }
     },
   },
   created: function () {
     let that = this;
-    console.log(that.$props);
     that.nav = that.$parent.$parent.nav;
+    if(that.$props.navObj.name==='index'){that.title='首页';return false;}
     for (let item of that.nav) {
       let obj = item.children.find((_item) => {
         return _item.fileName == that.$props.navObj.name;

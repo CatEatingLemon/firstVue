@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login'
 import Index from '../views/Index'
 import LoginStatis from '../views/LoginStatis'
+import LoginAdminStatis from '../views/LoginAdminStatis'
 import Read from '../views/Read'
 import Paper from '../views/Paper'
 import OnlineClass from '../views/OnlineClass'
@@ -40,6 +41,11 @@ const routes = [{
     path: '/LoginStatis',
     name: 'LoginStatis',
     component: LoginStatis
+  },
+  {
+    path: '/LoginAdminStatis',
+    name: 'LoginAdminStatis',
+    component: LoginAdminStatis
   },
   {
     path: '/Read',

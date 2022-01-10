@@ -19,7 +19,7 @@
       />
       <van-field
         class="mt5"
-        v-model="param.language"
+        v-model="param.languageDesc"
         label="选择语种"
         placeholder="请选择语种"
         readonly
@@ -72,13 +72,20 @@ export default {
     [Picker.name]: Picker,
     [Button.name]: Button,
   },
+  props: {
+    navObj: {
+      type: Object,
+    },
+  },
   data() {
     return {
       param: {
         startDate: "",
         endDate: "",
         language: "",
+        languageDesc: "",
         query: "",
+        type: 0,
       },
       langs: [
         { id: 0, text: "西班牙语" },
@@ -101,6 +108,8 @@ export default {
     pickerConfirm(val, index) {
       this.langObj.val = index;
       this.langObj.isShow = false;
+      this.param.languageDesc = val;
+      this.param.language = index;
     },
     SetDateDone(value) {
       let dateObj = new Date(value);
@@ -139,9 +148,14 @@ export default {
     },
     saveBus() {
       let that = this;
-      console.log(that.param)
-      bus.$emit("queryObj", that.param);
+      if (that.$props.navObj.type) {
+        that.param.type = that.$props.navObj.type;
+      }
+      bus.$emit(that.$props.navObj.name + "Event", that.param);
     },
+  },
+  mounted() {
+    this.saveBus();
   },
 };
 </script>
