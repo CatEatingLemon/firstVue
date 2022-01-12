@@ -142,4 +142,11 @@ table {
     top: 50vh;
   }
 }
+.van-pagination__item{
+  color:#000;
+}
+.van-pagination__item--active{
+  background-color:#fcab50;
+  color: #fff;
+}
 </style>

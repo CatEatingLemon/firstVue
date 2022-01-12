@@ -1,7 +1,9 @@
 <template>
   <div class="login-main">
+    <img src="../assets/images/logo.png" alt="Logo" />
     <van-form @submit="onSubmit">
       <van-field
+        class="van-hairline--bottom"
         v-model="username"
         name="用户名"
         label="用户名"
@@ -9,6 +11,7 @@
         :rules="[{ required: true, message: '请填写用户名' }]"
       />
       <van-field
+        class="van-hairline--bottom"
         v-model="password"
         type="password"
         name="密码"
@@ -16,9 +19,9 @@
         placeholder="密码"
         :rules="[{ required: true, message: '请填写密码' }]"
       />
-      <div style="margin: 16px">
-        <van-button round block type="info" native-type="submit"
-          >提交</van-button
+      <div class="btn-box">
+        <van-button round block type="warning" native-type="submit"
+          >登录</van-button
         >
       </div>
     </van-form>
@@ -33,15 +36,15 @@ export default {
     [Button.name]: Button,
     [Form.name]: Form,
     [Field.name]: Field,
-    [Toast.name]: Toast
+    [Toast.name]: Toast,
   },
   data() {
     return {
       username: "",
       password: "",
       localAccount: {
-        account: "Qy@calvin888",
-        password: "calvin",
+        account: "calvin",
+        password: "Qy@calvin888",
       },
     };
   },
@@ -49,8 +52,8 @@ export default {
     onSubmit() {
       let that = this;
       if (
-        that.username == that.localAccount.account &&
-        that.password == that.localAccount.password
+        that.username === that.localAccount.account &&
+        that.$md5(that.password) === that.$md5(that.localAccount.password)
       ) {
         that.$router.push({
           name: "Index",
@@ -66,6 +69,24 @@ export default {
 
 <style lang="scss" scoped>
 .login-main {
-  margin-top: 30vh;
+  img {
+    width: 40vw;
+    padding-top: 15vh;
+    margin-bottom: 5vh;
+  }
+}
+.van-cell {
+  background-color: initial;
+  width: 80%;
+  margin: 0 auto;
+}
+.btn-box {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5vh;
+  .van-button--warning {
+    background-color: #fcab50;
+    border: 1px solid #fcab50;
+  }
 }
 </style>

@@ -23,6 +23,9 @@ import PaperError from '../views/PaperError'
 import OnlineQA from '../views/OnlineQA'
 import GameFeedback from '../views/GameFeedback'
 import VocaFeedback from '../views/VocaFeedback'
+import FMError from '../views/FMError'
+import ThemeRec from '../views/ThemeRec'
+import ThemeError from '../views/ThemeError'
 
 
 Vue.use(VueRouter)
@@ -132,6 +135,21 @@ const routes = [{
     name: 'VocaFeedback',
     component: VocaFeedback
   },
+  {
+    path: '/FMError',
+    name: 'FMError',
+    component: FMError
+  },
+  {
+    path: '/ThemeRec',
+    name: 'ThemeRec',
+    component: ThemeRec
+  },
+  {
+    path: '/ThemeError',
+    name: 'ThemeError',
+    component: ThemeError
+  }
 ]
 
 const router = new VueRouter({

@@ -31,7 +31,11 @@
         label="用户/学校"
         placeholder="请输入用户/学校"
       />
-      <van-button class="mt5" type="primary" @click="saveBus">搜索</van-button>
+      <div class="btn-box">
+        <van-button class="mt5" type="primary" @click="saveBus"
+          >搜索</van-button
+        >
+      </div>
     </div>
     <van-popup v-model="dateObj.isShow" position="bottom">
       <van-datetime-picker
@@ -163,5 +167,14 @@ export default {
 <style lang="scss" scoped>
 .mt5 {
   margin-top: 0.5vh;
+}
+.btn-box {
+  text-align: right;
+  .van-button {
+    margin-right: 5vw;
+    margin-top: 1vw;
+    background-color: #fcab50;
+    border:1px solid #fcab50
+  }
 }
 </style>
