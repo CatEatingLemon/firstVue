@@ -43,8 +43,8 @@ export default {
       username: "",
       password: "",
       localAccount: {
-        account: "calvin",
-        password: "Qy@calvin888",
+        account: "calvin.tian",
+        password: "Qy@Calvin.Tian.888",
       },
     };
   },

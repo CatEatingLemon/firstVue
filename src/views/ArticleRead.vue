@@ -22,9 +22,10 @@ export default {
     return {
       navObj: {
         name: this.$route.query.navName,
-        urlName: ""
+        urlName: "",
+        type:1
       },
-    };
+    }
   },
   created() {
     let nav = this.$parent.nav;

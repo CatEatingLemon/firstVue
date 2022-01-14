@@ -26,6 +26,8 @@ import VocaFeedback from '../views/VocaFeedback'
 import FMError from '../views/FMError'
 import ThemeRec from '../views/ThemeRec'
 import ThemeError from '../views/ThemeError'
+import ArticleRead from '../views/ArticleRead'
+import Clbum from '../views/Clbum'
 
 
 Vue.use(VueRouter)
@@ -33,12 +35,18 @@ Vue.use(VueRouter)
 const routes = [{
     path: '/',
     name: 'Login',
-    component: Login
+    component: Login,
+    meta:{
+      title:'QiYou-Admin'
+    }
   },
   {
     path: '/Index',
     name: 'Index',
-    component: Index
+    component: Index,
+    meta:{
+      title:'QiYou-Admin'
+    }
   },
   {
     path: '/LoginStatis',
@@ -54,6 +62,11 @@ const routes = [{
     path: '/Read',
     name: 'Read',
     component: Read
+  },
+  {
+    path: '/ArticleRead',
+    name: 'ArticleRead',
+    component: ArticleRead
   },
   {
     path: '/Paper',
@@ -149,6 +162,11 @@ const routes = [{
     path: '/ThemeError',
     name: 'ThemeError',
     component: ThemeError
+  },
+  {
+    path:'/Clbum',
+    name:'Clbum',
+    component:Clbum
   }
 ]
 

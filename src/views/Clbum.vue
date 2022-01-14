@@ -7,7 +7,6 @@
 </template>
 
 <script>
-// import bus from "../bus";
 import Header from "../components/Header.vue";
 import DataList from "../components/DataList.vue";
 import Query from "../components/Query.vue";
@@ -22,9 +21,9 @@ export default {
     return {
       navObj: {
         name: this.$route.query.navName,
-        urlName: ""
+        urlName: "",
       },
-    };
+    }
   },
   created() {
     let nav = this.$parent.nav;
@@ -43,4 +42,5 @@ export default {
 </script>
 
 <style>
+
 </style>

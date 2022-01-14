@@ -30,10 +30,16 @@ export default {
               id: "LoginAdminStatis",
             },
             {
-              text: "朗读数据",
+              text: "单词朗读",
               fileName: "Read",
               urlName: "GetReadList",
               id: "Read",
+            },
+            {
+              text: "原文朗读",
+              fileName: "ArticleRead",
+              urlName: "GetReadList",
+              id: "ArticleRead",
             },
             {
               text: "答卷信息",
@@ -100,6 +106,12 @@ export default {
               urlName: "GetPageUser",
               id: "Student",
             },
+            {
+              text:"班级管理",
+              fileName:"Clbum",
+              urlName:"GetPageClbum",
+              id:"Clbum"
+            }
           ],
         },
         {
@@ -131,6 +143,17 @@ export default {
           ],
         },
         {
+          text: "资料管理",
+          children: [
+            {
+              text: "广播纠错",
+              fileName: "FMError",
+              urlName: "GetPageFMError",
+              id: "FMError",
+            },
+          ],
+        },
+        {
           text: "网校资源",
           children: [
             {
@@ -155,17 +178,6 @@ export default {
               fileName: "VocaFeedback",
               urlName: "GetTHistroiesFeedback",
               id: "VocaFeedback",
-            },
-          ],
-        },
-        {
-          text: "资料管理",
-          children: [
-            {
-              text: "广播纠错",
-              fileName: "FMError",
-              urlName: "GetPageFMError",
-              id: "FMError",
             },
           ],
         },
@@ -204,7 +216,7 @@ export default {
   background: url("./assets/images/bg.jpg") no-repeat center center;
   background-size: cover;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #nav {
