@@ -74,7 +74,7 @@ export default {
         { id: 10, name: "22" },
       ],
       totalItems: 1,
-      url: "http://192.168.0.199:8009/Thirdparty",
+      url: "http://192.168.0.102:8009/Thirdparty",
       isLoading: false,
     };
   },

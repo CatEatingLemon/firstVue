@@ -89,6 +89,42 @@ export default {
               urlName: "GetPageQueryHistories",
               id: "QAHistroy",
             },
+            {
+              text: "词库朗读",
+              fileName: "TSRead",
+              urlName: "GetReadRecByTS",
+              id: "TSRead",
+            },
+            {
+              text: "听词记忆",
+              fileName: "BookReadUse",
+              urlName: "GetBookReadUses",
+              id: "BookReadUse",
+            },
+            {
+              text: "联机对战",
+              fileName: "FakePlay",
+              urlName: "GetGameResPage",
+              id: "FakePlay",
+            },
+            {
+              text: "动词变位",
+              fileName: "Conjugation",
+              urlName: "GetConjugationHistroyPage",
+              id: "Conjugation",
+            },
+            {
+              text: "用户笔记",
+              fileName: "UserNote",
+              urlName: "GetPageNote",
+              id: "UserNote",
+            },
+            {
+              text: "新闻推送",
+              fileName: "NewsPush",
+              urlName: "GetNewsPushRecPage",
+              id: "NewsPush",
+            },
           ],
         },
         {
@@ -107,11 +143,17 @@ export default {
               id: "Student",
             },
             {
-              text:"班级管理",
-              fileName:"Clbum",
-              urlName:"GetPageClbum",
-              id:"Clbum"
-            }
+              text: "班级管理",
+              fileName: "Clbum",
+              urlName: "GetPageClbum",
+              id: "Clbum",
+            },
+            {
+              text: "作品推送",
+              fileName: "FilePush",
+              urlName: "GetUserFiles",
+              id: "FilePush",
+            },
           ],
         },
         {
@@ -179,6 +221,12 @@ export default {
               urlName: "GetTHistroiesFeedback",
               id: "VocaFeedback",
             },
+             {
+              text: "变位纠错",
+              fileName: "ConjugationFeedback",
+              urlName: "GetConjugationFBPage",
+              id: "ConjugationFeedback",
+            },
           ],
         },
         {
@@ -195,8 +243,19 @@ export default {
               fileName: "ThemeError",
               urlName: "GetPageThemeError",
               id: "ThemeError",
-            }
+            },
           ],
+        },
+        {
+          text:"线下站点",
+          children:[
+            {
+              text: "报名收入",
+              fileName: "RegisIncomes",
+              urlName: "GetRegisIncomes",
+              id: "RegisIncomes",
+            }
+          ]
         }
       ],
       activeId: "",

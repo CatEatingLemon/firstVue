@@ -28,6 +28,15 @@ import ThemeRec from '../views/ThemeRec'
 import ThemeError from '../views/ThemeError'
 import ArticleRead from '../views/ArticleRead'
 import Clbum from '../views/Clbum'
+import TSRead from '../views/TSRead'
+import BookReadUse from '../views/BookReadUse'
+import FakePlay from '../views/FakePlay'
+import Conjugation from '../views/Conjugation'
+import UserNote from '../views/UserNote'
+import NewsPush from '../views/NewsPush'
+import FilePush from '../views/FilePush'
+import ConjugationFeedback from '../views/ConjugationFeedback'
+import RegisIncomes from '../views/RegisIncomes'
 
 
 Vue.use(VueRouter)
@@ -167,6 +176,51 @@ const routes = [{
     path:'/Clbum',
     name:'Clbum',
     component:Clbum
+  },
+  {
+    path:'/TSRead',
+    name:'TSRead',
+    component:TSRead
+  },
+  {
+    path:'/BookReadUse',
+    name:'BookReadUse',
+    component:BookReadUse
+  },
+  {
+    path:'/FakePlay',
+    name:'FakePlay',
+    component:FakePlay
+  },
+  {
+    path:'/Conjugation',
+    name:'Conjugation',
+    component:Conjugation
+  },
+  {
+    path:'/UserNote',
+    name:'UserNote',
+    component:UserNote
+  },
+  {
+    path:'/NewsPush',
+    name:'NewsPush',
+    component:NewsPush
+  },
+  {
+    path:'/FilePush',
+    name:'FilePush',
+    component:FilePush
+  },
+  {
+    path:'/ConjugationFeedback',
+    name:'ConjugationFeedback',
+    component:ConjugationFeedback
+  },
+  {
+    path:'/RegisIncomes',
+    name:'RegisIncomes',
+    component:RegisIncomes
   }
 ]
 
