@@ -5,7 +5,7 @@ import router from './router'
 import md5 from 'js-md5'
 
 Vue.config.productionTip = false
-axios.defaults.baseURL = 'http://192.168.0.102:8009/Thirdparty'
+axios.defaults.baseURL = 'https://www.5aischool.cn/Api/SSO/Thirdparty'
 Vue.prototype.$axios = axios
 Vue.prototype.$md5 = md5
 

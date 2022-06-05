@@ -74,7 +74,7 @@ export default {
         { id: 10, name: "22" },
       ],
       totalItems: 1,
-      url: "http://192.168.0.102:8009/Thirdparty",
+      url: "https://www.5aischool.cn/Api/SSO/Thirdparty",
       isLoading: false,
     };
   },
@@ -84,7 +84,7 @@ export default {
       this.isLoading=true;
       this.$axios
         .post(
-          that.url + "/" + that.$props.navObj.urlName,
+          that.url + "_" + that.$props.navObj.urlName,
           that.$qs.stringify(that.param)
         )
         .then((res) => {

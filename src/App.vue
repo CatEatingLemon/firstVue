@@ -125,6 +125,12 @@ export default {
               urlName: "GetNewsPushRecPage",
               id: "NewsPush",
             },
+            {
+              text: "词汇比赛",
+              fileName: "ContestResult",
+              urlName: "GetContestResult",
+              id: "ContestResult",
+            },
           ],
         },
         {
@@ -207,6 +213,17 @@ export default {
           ],
         },
         {
+          text: "出国留学",
+          children: [
+            {
+              text: "留学评估",
+              fileName: "Evaluation",
+              urlName: "GetEvaluationPage",
+              id: "Evaluation",
+            },
+          ],
+        },
+        {
           text: "媒体辅助",
           children: [
             {
@@ -249,6 +266,12 @@ export default {
         {
           text:"线下站点",
           children:[
+            {
+              text: "咨询留单",
+              fileName: "Advisory",
+              urlName: "GetAdvisoryList",
+              id: "Advisory",
+            },
             {
               text: "报名收入",
               fileName: "RegisIncomes",

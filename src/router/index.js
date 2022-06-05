@@ -37,6 +37,9 @@ import NewsPush from '../views/NewsPush'
 import FilePush from '../views/FilePush'
 import ConjugationFeedback from '../views/ConjugationFeedback'
 import RegisIncomes from '../views/RegisIncomes'
+import Advisory from '../views/Advisory'
+import Evaluation from '../views/Evaluation'
+import ContestResult from '../views/ContestResult'
 
 
 Vue.use(VueRouter)
@@ -45,16 +48,16 @@ const routes = [{
     path: '/',
     name: 'Login',
     component: Login,
-    meta:{
-      title:'QiYou-Admin'
+    meta: {
+      title: 'QiYou-Admin'
     }
   },
   {
     path: '/Index',
     name: 'Index',
     component: Index,
-    meta:{
-      title:'QiYou-Admin'
+    meta: {
+      title: 'QiYou-Admin'
     }
   },
   {
@@ -173,54 +176,68 @@ const routes = [{
     component: ThemeError
   },
   {
-    path:'/Clbum',
-    name:'Clbum',
-    component:Clbum
+    path: '/Clbum',
+    name: 'Clbum',
+    component: Clbum
   },
   {
-    path:'/TSRead',
-    name:'TSRead',
-    component:TSRead
+    path: '/TSRead',
+    name: 'TSRead',
+    component: TSRead
   },
   {
-    path:'/BookReadUse',
-    name:'BookReadUse',
-    component:BookReadUse
+    path: '/BookReadUse',
+    name: 'BookReadUse',
+    component: BookReadUse
   },
   {
-    path:'/FakePlay',
-    name:'FakePlay',
-    component:FakePlay
+    path: '/FakePlay',
+    name: 'FakePlay',
+    component: FakePlay
   },
   {
-    path:'/Conjugation',
-    name:'Conjugation',
-    component:Conjugation
+    path: '/Conjugation',
+    name: 'Conjugation',
+    component: Conjugation
   },
   {
-    path:'/UserNote',
-    name:'UserNote',
-    component:UserNote
+    path: '/UserNote',
+    name: 'UserNote',
+    component: UserNote
   },
   {
-    path:'/NewsPush',
-    name:'NewsPush',
-    component:NewsPush
+    path: '/NewsPush',
+    name: 'NewsPush',
+    component: NewsPush
   },
   {
-    path:'/FilePush',
-    name:'FilePush',
-    component:FilePush
+    path: '/FilePush',
+    name: 'FilePush',
+    component: FilePush
   },
   {
-    path:'/ConjugationFeedback',
-    name:'ConjugationFeedback',
-    component:ConjugationFeedback
+    path: '/ConjugationFeedback',
+    name: 'ConjugationFeedback',
+    component: ConjugationFeedback
   },
   {
-    path:'/RegisIncomes',
-    name:'RegisIncomes',
-    component:RegisIncomes
+    path: '/RegisIncomes',
+    name: 'RegisIncomes',
+    component: RegisIncomes
+  },
+  {
+    path: '/Advisory',
+    name: 'Advisory',
+    component: Advisory
+  },
+  {
+    path: '/Evaluation',
+    name: 'Evaluation',
+    component: Evaluation
+  }, {
+    path: '/ContestResult',
+    name: 'ContestResult',
+    component: ContestResult
   }
 ]
 
